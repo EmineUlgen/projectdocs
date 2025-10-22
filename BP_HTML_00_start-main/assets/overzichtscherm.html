@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vertrekoverzicht (Laptopversie)</title>
+  <style>
+    :root {
+      --bg: #24244a;
+      --light: #e8e9f6;
+      --blue: #4b64ff;
+      --pink: #ff7ac8;
+      --orange: #ff9d4a;
+      --green: #7cd47c;
+      --text: #1e1e2f;
+      --delay: #d67e00;
+      --cancel: #d03a1a;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: "Courier New", Courier, monospace;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 0;
+    }
+
+    .board {
+      width: 1600px;
+      background: var(--light);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      background: var(--light);
+      padding: 30px 60px;
+      font-size: 45px;
+      font-weight: bold;
+      border-bottom: 8px solid var(--bg);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 25px 50px;
+      border-bottom: 5px solid var(--bg);
+      background: var(--light);
+      font-size: 32px;
+    }
+
+    .train-info {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex: 2;
+    }
+
+    .circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .ic13 { background: var(--pink); }
+    .ic2419 { background: var(--blue); }
+    .ic1500 { background: var(--orange); }
+    .ic08 { background: var(--green); }
+
+    .dest {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .perron-time {
+      text-align: right;
+      flex: 1;
+      font-size: 28px;
+    }
+
+    .status {
+      text-align: right;
+      font-weight: bold;
+      font-size: 30px;
+      width: 200px;
+    }
+
+    .on-time { color: var(--green); }
+    .delay { color: var(--delay); }
+    .cancel { color: var(--cancel); }
+
+    .strike {
+      text-decoration: line-through;
+      text-decoration-thickness: 4px;
+      text-decoration-color: var(--cancel);
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="header">
+      <div>Vertrektijd / heure de départ / Abfahrtszeit:</div>
+      <div>Status:</div>
+    </div>
+
+    <div class="row">
+      <div class="train-info">
+        <div class="circle ic13">IC 13</div>
+        <div class="dest">
+          <div>Kortrijk naar Voeren</div>
+          <div>De Courtrai à Fourmies</div>
+        </div>
+      </div>
+      <div class="perron-time">
+        <div>Perron 3</div>
+        <div>14:20</div>
+      </div>
+      <div class="status on-time">Optijd</div>
+    </div>
+
+    <div class="row">
+      <div class="train-info">
+        <div class="circle ic2419">IC2419</div>
+        <div class="dest">
+          <div>Oostende naar Namen</div>
+          <div>Ostende à Namur</div>
+        </div>
+      </div>
+      <div class="perron-time">
+        <div>Perron 4</div>
+        <div>14:37</div>
+      </div>
+      <div class="status delay">Vertraging</div>
+    </div>
+
+    <div class="row">
+      <div class="train-info">
+        <div class="circle ic1500">IC1500</div>
+        <div class="dest strike">
+          <div>Charleroi naar Antwerpen-Centraal</div>
+          <div>Charleroi à Anvers-Central</div>
+        </div>
+      </div>
+      <div class="perron-time">
+        <div>Perron 2</div>
+        <div>14:40</div>
+      </div>
+      <div class="status cancel">Geannuleerd</div>
+    </div>
+
+    <div class="row">
+      <div class="train-info">
+        <div class="circle ic08">IC 08</div>
+        <div class="dest">
+          <div>Hasselt naar Antwerpen-Centraal</div>
+          <div>Hasselt vers Anvers-Central</div>
+        </div>
+      </div>
+      <div class="perron-time">
+        <div>Perron 1</div>
+        <div>14:48</div>
+      </div>
+      <div class="status on-time">Optijd</div>
+    </div>
+
+    <div class="row">
+      <div class="train-info">
+        <div class="circle ic1500">IC1500</div>
+        <div class="dest">
+          <div>Gent-Sint-Pieters naar Antwerpen-Centraal</div>
+          <div>De Gand-Saint-Pierre à Anvers-Central</div>
+        </div>
+      </div>
+      <div class="perron-time">
+        <div>Perron 2</div>
+        <div>15:15</div>
+      </div>
+      <div class="status delay">Vertraging</div>
+    </div>
+  </div>
+</body>
+</html>
